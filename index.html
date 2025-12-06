@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Turncloak Card Conspiracy - Tutorial & Guide Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A comprehensive tutorial and guide website for Turncloak Card Conspiracy, featuring all 18 character cards, game mechanics, and strategy tips.">
+  <meta name="author" content="Turncloak Card Conspiracy">
+  <!-- Behance embed optimization -->
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #05030b;
+      --bg-soft: #131020;
+      --card: #1c1633;
+      --accent: #f4b942;
+      --accent-soft: rgba(244, 185, 66, 0.16);
+      --accent-strong: rgba(244, 185, 66, 0.6);
+      --text: #f5f3ff;
+      --muted: #b3a9d9;
+      --border-soft: rgba(255, 255, 255, 0.08);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      /* Behance embed optimization - prevent scroll issues */
+      overflow-x: hidden;
+    }
+
+    body {
+      margin: 0;
+      padding: 2.5rem 2rem;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #251642 0, #05030b 45%, #020208 100%);
+      color: var(--text);
+      line-height: 1.75;
+      letter-spacing: 0.01em;
+      /* Behance embed optimization */
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: linear-gradient(145deg, rgba(18,12,40,0.96), rgba(3,2,12,0.98));
+      border-radius: 32px;
+      padding: 3.5rem 3rem 4rem;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border-soft);
+      /* Behance embed optimization */
+      position: relative;
+    }
+
+    header {
+      display: grid;
+      gap: 2.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .logo-container img {
+      max-width: 240px;
+      height: auto;
+      filter: drop-shadow(0 6px 20px rgba(244, 185, 66, 0.4));
+      transition: transform 0.3s ease;
+    }
+
+    .logo-container img:hover {
+      transform: scale(1.05);
+    }
+
+    .title-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: baseline;
+      justify-content: space-between;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+      background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .badge {
+      padding: 0.5rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid var(--accent-soft);
+      background: rgba(8, 5, 24, 0.9);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .meta-pill {
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-soft);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .hero {
+      margin-top: 1rem;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top, #3c235a 0, #080412 45%, #020109 100%);
+      padding: 2.5rem 2.25rem;
+      display: grid;
+      gap: 1.75rem;
+    }
+
+    .hero-main {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .hero-main p {
+      margin: 0.5rem 0;
+    }
+
+    .hero-main strong {
+      font-weight: 600;
+      color: var(--text);
+      font-size: 1.15rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .hero-tag {
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.08);
+      font-weight: 500;
+      letter-spacing: 0.03em;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      margin: 3rem 0 1.25rem;
+      font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      line-height: 1.3;
+      color: var(--text);
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      margin: 2rem 0 0.75rem;
+      font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+      color: var(--text);
+    }
+
+    p {
+      margin: 0.75rem 0 1.25rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      letter-spacing: 0.01em;
+    }
+
+    ul {
+      margin: 0.75rem 0 1.5rem 1.5rem;
+      padding: 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    li {
+      margin: 0.5rem 0;
+      padding-left: 0.5rem;
+    }
+
+    li + li {
+      margin-top: 0.75rem;
+    }
+
+    li strong {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .section-card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      background: rgba(7, 5, 24, 0.95);
+      padding: 2.5rem 2.75rem;
+      margin-top: 1.5rem;
+    }
+
+    /* Collapsible sections */
+    details {
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      background: rgba(5, 3, 20, 0.95);
+      margin-top: 1rem;
+      padding: 1.25rem 1.5rem;
+    }
+
+    details + details {
+      margin-top: 0.75rem;
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      padding: 0.25rem 0;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .caret {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      transition: transform 0.2s ease;
+    }
+
+    details[open] .caret {
+      transform: rotate(90deg);
+    }
+
+    .summary-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .summary-label span {
+      font-size: 0.75rem;
+      padding: 0.09rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    details > div {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    /* Image gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .gallery-full {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    figure {
+      margin: 0;
+      background: rgba(10, 7, 30, 0.9);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-soft);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    figure:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.55);
+      border-color: var(--accent-soft);
+    }
+
+    figure img {
+      transition: transform 0.2s ease;
+    }
+
+    figure:hover img {
+      transform: scale(1.02);
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    figcaption {
+      padding: 0.75rem 0.9rem 0.85rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .links-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .link-pill {
+      padding: 0.6rem 1.25rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: rgba(0,0,0,0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: all 0.2s ease;
+    }
+
+    .link-pill span {
+      font-size: 0.9em;
+    }
+
+    .link-pill:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(244, 185, 66, 0.2);
+    }
+
+    .footer-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      opacity: 0.75;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    /* Lightbox overlay */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      padding: 1rem;
+    }
+
+    .lightbox-inner {
+      max-width: 900px;
+      width: 100%;
+      max-height: 90vh;
+      background: #05030b;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: minmax(0, 1fr) auto;
+    }
+
+    .lightbox img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: radial-gradient(circle at top, #27163f 0, #020107 55%, #000 100%);
+    }
+
+    .lightbox-caption {
+      padding: 0.6rem 0.9rem 0.7rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .lightbox-close {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 1.1rem;
+      cursor: pointer;
+      padding: 0.15rem 0.3rem;
+    }
+
+    .lightbox-close:hover {
+      color: var(--accent-strong);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1.5rem 1rem;
+      }
+      .page {
+        padding: 2rem 1.5rem 2.5rem;
+      }
+      header {
+        gap: 2rem;
+        margin-bottom: 3rem;
+      }
+      .section-card {
+        padding: 1.75rem 1.5rem;
+      }
+      .hero {
+        padding: 1.75rem 1.5rem;
+      }
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+      }
+      .gallery-full {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1.25rem;
+      }
+      .logo-container img {
+        max-width: 180px;
+      }
+      h2 {
+        margin: 2.5rem 0 1rem;
+        font-size: 1.75rem;
+      }
+      h3 {
+        margin: 1.5rem 0 0.75rem;
+        font-size: 1.25rem;
+      }
+    }
+
+    /* Behance embed specific optimizations */
+    @media (max-width: 1200px) {
+      .page {
+        padding: 3rem 2.5rem 3.5rem;
+      }
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1.25rem;
+      }
+      .gallery-full {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1.75rem;
+      }
+    }
+
+    /* Code styling */
+    code {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.9em;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      color: var(--accent);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="logo-container">
+        <img src="images/turncloak_logo.png" alt="Turncloak Card Conspiracy Logo">
+      </div>
+      <div class="title-row">
+        <h1>Turncloak Card Conspiracy</h1>
+        <span class="badge">Tutorial & Guide Website</span>
+      </div>
+
+      <div class="meta-row">
+        <span class="meta-pill">Social Deduction · Roguelike Card Game</span>
+        <span class="meta-pill">Single-Page Web Experience</span>
+        <span class="meta-pill">HTML · CSS · JavaScript · jQuery</span>
+      </div>
+
+      <section class="hero" aria-label="Project overview">
+        <div class="hero-main">
+          <p><strong>Project Overview</strong></p>
+          <p>
+            A comprehensive tutorial and guide website for
+            <em>Turncloak Card Conspiracy</em>, a social deduction roguelike card game.
+            This single-page site teaches core mechanics, card abilities, and strategy,
+            blending interactive UI components with accessible documentation to help
+            players of all levels learn by doing.
+          </p>
+        </div>
+        <div class="hero-tags">
+          <div class="hero-tag">Game UI / UX</div>
+          <div class="hero-tag">Interactive Guide</div>
+          <div class="hero-tag">Theme Switcher</div>
+          <div class="hero-tag">API + Web Storage</div>
+          <div class="hero-tag">Accessible Front-End</div>
+        </div>
+      </section>
+    </header>
+
+    <!-- Project Requirements -->
+    <section class="section-card" id="requirements">
+      <h2>Project Requirements</h2>
+      <p>
+        The project was built to meet a strict set of HTML, CSS, and JavaScript
+        requirements while still feeling like a polished, player-facing game tutorial.
+      </p>
+
+      <details open>
+        <summary>
+          <span class="summary-label">
+            HTML Requirements <span>Structure</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <ul>
+            <li>Single-page HTML file (no multiple pages).</li>
+            <li>Semantic HTML structure with no inline CSS or JavaScript.</li>
+            <li>Real content only, no placeholder text or images.</li>
+            <li>Professional website elements: logo, header, navigation, footer.</li>
+            <li>HTML validation through W3C with zero errors.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            CSS Requirements <span>Visual System</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <ul>
+            <li>External stylesheet that validates without errors.</li>
+            <li>Site displays properly at 1280px width.</li>
+            <li>Well-organized, commented, and properly indented CSS.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            JavaScript Requirements <span>Interactivity</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <ul>
+            <li>Global <code>"use strict"</code> and clean, modular functions.</li>
+            <li>At least one jQuery widget or plugin beyond a slideshow.</li>
+            <li>Ajax/API: load at least three pieces of dynamic content from an API / mock server.</li>
+            <li>Web Storage: store and retrieve user data using <code>localStorage</code>.</li>
+            <li>jQuery-based slideshow/carousel with at least three images.</li>
+            <li>Scripts loaded with <code>async</code> or <code>defer</code> and no console errors.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <!-- What the Requirements Inspired -->
+    <section class="section-card" id="inspiration">
+      <h2>What the Requirements Inspired</h2>
+      <p>
+        Instead of treating the assignment as a generic portfolio or business site,
+        I used the requirements as constraints to build something I genuinely wanted:
+        a fully featured tutorial and companion site for <em>Turncloak Card Conspiracy</em>.
+      </p>
+
+      <ul>
+        <li>
+          <strong>Theme Switcher:</strong> the web storage requirement became a persistent
+          theme system with four game-inspired color schemes:
+          Gambit Heights, Shipwreck Royal, Cedarcrest Chalet, and Cosmic Casino.
+        </li>
+        <li>
+          <strong>Interactive Card Showcase:</strong> the carousel requirement turned into
+          browsable galleries of all 18 cards with smooth animations.
+        </li>
+        <li>
+          <strong>Strategy Tips API:</strong> the Ajax requirement evolved into a dynamic
+          strategy tip system that fetches random tips from a Postman mock server,
+          keeping content fresh and replayable.
+        </li>
+        <li>
+          <strong>Personalized Experience:</strong> web storage powers a username and
+          favorite color system that greets returning players and remembers preferences.
+        </li>
+      </ul>
+    </section>
+
+    <!-- Goals, Purpose, Target Users -->
+    <section class="section-card" id="goals">
+      <h2>Goals, Purpose & Target Users</h2>
+
+      <h3>Goals</h3>
+      <ul>
+        <li><strong>Educational:</strong> provide comprehensive, easy-to-understand information about game mechanics, card abilities, and strategy.</li>
+        <li><strong>Engagement:</strong> create an interactive, visually appealing experience that keeps players exploring.</li>
+        <li><strong>Accessibility:</strong> ensure the site is usable by all players, including those with assistive technologies.</li>
+        <li><strong>Performance:</strong> deliver fast load times and smooth interactions.</li>
+        <li><strong>Professional Quality:</strong> demonstrate mastery of HTML, CSS, and JavaScript best practices.</li>
+      </ul>
+
+      <h3>Purpose</h3>
+      <p>
+        The website serves as the primary tutorial and reference guide for
+        <em>Turncloak Card Conspiracy</em> players. It helps new players learn the game,
+        supports casual players with quick reference, and provides deeper strategy insights
+        for competitive players and game masters. In practice, it operates as a digital
+        companion to the physical card game.
+      </p>
+
+      <h3>Target Users</h3>
+      <ul>
+        <li><strong>New Players:</strong> discovering the game for the first time and needing clear explanations of rules and mechanics.</li>
+        <li><strong>Casual Players:</strong> looking for quick reference to card abilities and basic strategies.</li>
+        <li><strong>Competitive Players:</strong> seeking advanced tactics and deeper game knowledge.</li>
+        <li><strong>Game Masters:</strong> facilitating sessions and needing fast access to modes, rules, and card details.</li>
+      </ul>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section-card" id="gallery">
+      <h2>Complete Card Collection - All 18 Cards</h2>
+      <p>
+        The tutorial site showcases all 18 cards through grid and carousel views.
+        Below is the complete collection featuring all character cards with their unique
+        visual language and character design.
+      </p>
+
+      <h3 style="margin-top: 2.5rem; margin-bottom: 1.25rem; font-size: 1.5rem; color: var(--accent); font-weight: 600;">Good Role Cards (13 cards)</h3>
+      <div class="gallery gallery-full" aria-label="Turncloak good role cards">
+        <figure data-full="images/cards/analyst_draft.png">
+          <img src="images/cards/analyst_draft.png" alt="Analyst good-role card illustration">
+          <figcaption>Analyst</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/bartender_draft.png">
+          <img src="images/cards/bartender_draft.png" alt="Bartender good-role card illustration">
+          <figcaption>Bartender</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/boss_draft.png">
+          <img src="images/cards/boss_draft.png" alt="Boss good-role card illustration">
+          <figcaption>Boss</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/clerk_draft.png">
+          <img src="images/cards/clerk_draft.png" alt="Clerk good-role card illustration">
+          <figcaption>Clerk</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/contractor_draft.png">
+          <img src="images/cards/contractor_draft.png" alt="Contractor good-role card illustration">
+          <figcaption>Contractor</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/dancer_draft.png">
+          <img src="images/cards/dancer_draft.png" alt="Dancer good-role card illustration">
+          <figcaption>Dancer</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/daredevil_draft.png">
+          <img src="images/cards/daredevil_draft.png" alt="Daredevil good-role card illustration">
+          <figcaption>Daredevil</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/dealer_draft.png">
+          <img src="images/cards/dealer_draft.png" alt="Dealer good-role card illustration">
+          <figcaption>Dealer</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/hacker_draft.png">
+          <img src="images/cards/hacker_draft.png" alt="Hacker good-role card illustration">
+          <figcaption>Hacker</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/manager_draft.png">
+          <img src="images/cards/manager_draft.png" alt="Manager good-role card illustration">
+          <figcaption>Manager</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/security_draft.png">
+          <img src="images/cards/security_draft.png" alt="Security good-role card illustration">
+          <figcaption>Security</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/socialite_draft.png">
+          <img src="images/cards/socialite_draft.png" alt="Socialite good-role card illustration">
+          <figcaption>Socialite</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/valet_draft.png">
+          <img src="images/cards/valet_draft.png" alt="Valet good-role card illustration">
+          <figcaption>Valet</figcaption>
+        </figure>
+      </div>
+
+      <h3 style="margin-top: 3rem; margin-bottom: 1.25rem; font-size: 1.5rem; color: var(--accent); font-weight: 600;">Bad Role Cards (5 cards)</h3>
+      <div class="gallery gallery-full" aria-label="Turncloak bad role cards">
+        <figure data-full="images/cards/cheater_draft.png">
+          <img src="images/cards/cheater_draft.png" alt="Cheater bad-role card illustration">
+          <figcaption>Cheater</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/fixer_draft.png">
+          <img src="images/cards/fixer_draft.png" alt="Fixer bad-role card illustration">
+          <figcaption>Fixer</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/runner_draft.png">
+          <img src="images/cards/runner_draft.png" alt="Runner bad-role card illustration">
+          <figcaption>Runner</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/saboteur_draft.png">
+          <img src="images/cards/saboteur_draft.png" alt="Saboteur bad-role card illustration">
+          <figcaption>Saboteur</figcaption>
+        </figure>
+
+        <figure data-full="images/cards/trickster_draft.png">
+          <img src="images/cards/trickster_draft.png" alt="Trickster bad-role card illustration">
+          <figcaption>Trickster</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Development Process -->
+    <section class="section-card" id="process">
+      <h2>Development Process</h2>
+
+      <details open>
+        <summary>
+          <span class="summary-label">
+            Phase 1 <span>Discovery & Content Gathering</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <h3>Research & Planning</h3>
+          <ul>
+            <li>Analyzed the game’s 18 unique cards (13 good, 5 bad).</li>
+            <li>Documented all four game modes and their configurations.</li>
+            <li>Gathered card images and game assets.</li>
+            <li>Researched similar tutorial websites for structure and interaction patterns.</li>
+            <li>Defined the information architecture and section hierarchy.</li>
+          </ul>
+
+          <h3>Content Strategy</h3>
+          <p>
+            Content was organized into logical sections: Introduction, How to Play, Card Galleries,
+            Strategy Tips, and Feedback. I prioritized information that would be most actionable
+            for players during actual gameplay, and planned interactive patterns (accordions, carousels,
+            and card flips) to support how players learn and revisit information.
+          </p>
+
+          <h3>Technical Planning</h3>
+          <ul>
+            <li>Libraries identified: jQuery, jQuery UI, Slick Carousel, Tone.js, Spectrum Color Picker.</li>
+            <li>API integration planned using a Postman Mock Server for strategy tips.</li>
+            <li>Web storage schema defined for username, color, and theme preferences.</li>
+            <li>Layout designed for a 1280px experience with future responsiveness in mind.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            Phase 2 <span>Design</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <h3>Wireframing</h3>
+          <ul>
+            <li>Created wireframes for a single-page layout with clear sections.</li>
+            <li>Planned navigation flow and anchor-based in-page navigation.</li>
+            <li>Designed card grid layouts and carousel structures.</li>
+            <li>Mapped modal dialogs, accordions, and interactive areas.</li>
+          </ul>
+
+          <h3>Visual Design</h3>
+          <p>
+            I developed four distinct theme color palettes inspired by different game settings:
+          </p>
+          <ul>
+            <li><strong>Gambit Heights:</strong> purple and gold casino theme.</li>
+            <li><strong>Shipwreck Royal:</strong> blue and bronze nautical theme.</li>
+            <li><strong>Cedarcrest Chalet:</strong> brown and tan rustic theme.</li>
+            <li><strong>Cosmic Casino:</strong> gray and blue futuristic theme.</li>
+          </ul>
+          <p>
+            Card flip animations were designed for interactive exploration, and CSS custom properties
+            were used to ensure each theme felt cohesive and maintainable.
+          </p>
+
+          <h3>Design Principles</h3>
+          <ul>
+            <li><strong>Clarity:</strong> clean typography, clear headings, and scannable content blocks.</li>
+            <li><strong>Consistency:</strong> unified color system and shared components across themes.</li>
+            <li><strong>Feedback:</strong> visual indicators for hover, focus, and active states.</li>
+            <li><strong>Accessibility:</strong> high contrast, semantic HTML, and appropriate ARIA labels.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            Phase 3 <span>Writing the Code</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <h3>HTML Structure</h3>
+          <ul>
+            <li>Semantic HTML5 structure with a clear heading hierarchy.</li>
+            <li>Accessibility features including skip links, ARIA labels, and descriptive alt text.</li>
+            <li>Organized sections with IDs for smooth in-page navigation.</li>
+            <li>No inline CSS or JavaScript in the production assignment version.</li>
+          </ul>
+
+          <h3>CSS Styling</h3>
+          <ul>
+            <li>CSS custom properties used to power theme switching.</li>
+            <li>Responsive grid layouts for card displays at 1280px and beyond.</li>
+            <li>Flip card animations built with CSS transforms and transitions.</li>
+            <li>Hover states and transitions on interactive elements for tactile feedback.</li>
+            <li>Validation through W3C CSS Validator and consistent indentation.</li>
+          </ul>
+
+          <h3>JavaScript Functionality</h3>
+          <ul>
+            <li>Global <code>"use strict"</code> at the top of the main script file.</li>
+            <li>Modular function structure for maintainability and clarity.</li>
+            <li>jQuery UI Accordion for the “How to Play” section.</li>
+            <li>jQuery UI Dialog for a username modal.</li>
+            <li>Spectrum Color Picker integration for favorite color selection.</li>
+            <li>Slick Carousel for showcasing good and bad cards in separate carousels.</li>
+            <li>Ajax calls to a Postman Mock Server to load strategy tips.</li>
+            <li>localStorage for username, color, and theme preference persistence.</li>
+            <li>Tone.js for interactive card sound effects.</li>
+            <li>Smooth scrolling navigation and feedback form validation.</li>
+          </ul>
+
+          <h3>Key Features Implemented</h3>
+          <ul>
+            <li><strong>Theme Switcher:</strong> dropdown that changes the entire site theme and saves the choice.</li>
+            <li><strong>Username System:</strong> modal dialog for setting a username and color, displayed in the header.</li>
+            <li><strong>Card Carousels:</strong> auto-playing Slick carousels for the 13 good cards and 5 bad cards.</li>
+            <li><strong>Strategy Tips API:</strong> button that fetches and injects random strategy tips from the Postman mock server.</li>
+            <li><strong>Interactive Cards:</strong> card flip animations paired with Tone.js sound effects.</li>
+            <li><strong>Accordion:</strong> collapsible game instructions for each mode.</li>
+            <li><strong>Feedback Form:</strong> validated form with rating inputs for player feedback.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            Phase 4 <span>Testing Design & Code</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <h3>HTML & CSS Validation</h3>
+          <ul>
+            <li>HTML validated through the W3C validator with no errors.</li>
+            <li>Confirmed semantic structure and accessibility attributes.</li>
+            <li>CSS validated through W3C CSS validator with no errors.</li>
+            <li>All themes tested for visual consistency and readability.</li>
+          </ul>
+
+          <h3>JavaScript & UX Testing</h3>
+          <ul>
+            <li>Verified no console errors on page load or during interactions.</li>
+            <li>Tested localStorage persistence across multiple sessions.</li>
+            <li>Ensured strategy tips API calls work and fail gracefully.</li>
+            <li>Tested carousel behavior and responsiveness.</li>
+            <li>Validated theme switching, form validation, and sound effects.</li>
+          </ul>
+
+          <h3>Accessibility & Cross-Browser Testing</h3>
+          <ul>
+            <li>Keyboard navigation tested across interactive components.</li>
+            <li>Modal dialogs and focus management validated.</li>
+            <li>Cross-browser testing performed on Chrome, Firefox, Edge, and Safari.</li>
+            <li>Library compatibility and fallback behaviors confirmed.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            Phase 5 <span>Final Look & Functionality</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <h3>Final Features</h3>
+          <ul>
+            <li>Fully functional single-page tutorial and guide.</li>
+            <li>Four cohesive theme options aligned with game lore.</li>
+            <li>Interactive carousels covering all 18 cards.</li>
+            <li>Dynamic content from the strategy tips API.</li>
+            <li>Persistent user preferences through web storage.</li>
+            <li>Accessible, semantic structure with clear navigation.</li>
+            <li>Smooth animations and transitions throughout.</li>
+          </ul>
+
+          <h3>Performance</h3>
+          <ul>
+            <li>Optimized image loading with lazy loading (in the original site).</li>
+            <li>Efficient organization of CSS and JavaScript assets.</li>
+            <li>Fast perceived page load and smooth interactions.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <!-- Tools & Technologies -->
+    <section class="section-card" id="tools">
+      <h2>Tools & Technologies Used</h2>
+      <h3>Development Tools</h3>
+      <ul>
+        <li><strong>Code Editor:</strong> Visual Studio Code / Cursor.</li>
+        <li><strong>Version Control:</strong> Git for tracking and managing changes.</li>
+        <li><strong>Browser DevTools:</strong> Chrome DevTools for debugging and testing.</li>
+      </ul>
+
+      <h3>Libraries & Frameworks</h3>
+      <ul>
+        <li><strong>jQuery 3.7.1:</strong> core DOM and event abstractions.</li>
+        <li><strong>jQuery UI 1.13.2:</strong> accordion and dialog widgets.</li>
+        <li><strong>Slick Carousel 1.8.1:</strong> card image carousels.</li>
+        <li><strong>Tone.js 14.7.77:</strong> web audio framework for card sound effects.</li>
+        <li><strong>Spectrum Color Picker 1.8.1:</strong> user-friendly color selection.</li>
+      </ul>
+
+      <h3>APIs & Services</h3>
+      <ul>
+        <li>
+          <strong>Postman Mock Server:</strong> custom endpoint for strategy tips<br>
+          Endpoint:
+          <code>https://586702b5-847c-462d-b05b-c2423ff15248.mock.pstmn.io/strategy-tips</code><br>
+          Returns a JSON array of strategy tips with content and author.
+        </li>
+      </ul>
+
+      <h3>Validation & Design Tools</h3>
+      <ul>
+        <li>W3C HTML Validator.</li>
+        <li>W3C CSS Validator.</li>
+        <li>Browser console for JavaScript error checking.</li>
+        <li>Wireframing with pen-and-paper and digital tools.</li>
+        <li>Manual color palette development based on game themes.</li>
+      </ul>
+
+      <div class="links-row">
+        <a class="link-pill" href="https://turncloak.cc" target="_blank" rel="noopener noreferrer">
+          <span>🔗</span><span>Live Site</span>
+        </a>
+        <a class="link-pill" href="https://github.com/tbalzora/turncloakcc-tutorial" target="_blank" rel="noopener noreferrer">
+          <span>💻</span><span>GitHub Repository</span>
+        </a>
+        <a class="link-pill" href="https://586702b5-847c-462d-b05b-c2423ff15248.mock.pstmn.io/strategy-tips" target="_blank" rel="noopener noreferrer">
+          <span>📡</span><span>Strategy Tips API</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Sources of Images and Assets -->
+    <section class="section-card" id="assets">
+      <h2>Sources of Images & Assets</h2>
+
+      <h3>Card Images</h3>
+      <ul>
+        <li>
+          All card images (e.g., <code>analyst_draft.png</code>,
+          <code>bartender_draft.png</code>, <code>boss_draft.png</code>,
+          <code>cheater_draft.png</code>, <code>clerk_draft.png</code>,
+          <code>contractor_draft.png</code>, <code>dancer_draft.png</code>,
+          <code>daredevil_draft.png</code>, <code>dealer_draft.png</code>,
+          <code>fixer_draft.png</code>, <code>hacker_draft.png</code>,
+          <code>manager_draft.png</code>, <code>runner_draft.png</code>,
+          <code>saboteur_draft.png</code>, <code>security_draft.png</code>,
+          <code>socialite_draft.png</code>, <code>trickster_draft.png</code>,
+          <code>valet_draft.png</code>) are <strong>draft mockups</strong> of the original game assets.
+        </li>
+        <li>
+          These images were created using generative imagery with slight Photoshop refinements as placeholders
+          during the game's development phase. As the game development progresses, these will be replaced with
+          fully developed, original character illustrations that better represent the final vision for each role.
+        </li>
+        <li>Location: <code>images/cards/</code> directory in the project.</li>
+      </ul>
+
+      <h3>Logo & Branding</h3>
+      <ul>
+        <li><strong>Turncloak Logo:</strong> <code>images/turncloak_logo.png</code>, original branding asset for the game.</li>
+      </ul>
+
+      <h3>Favicon Assets</h3>
+      <ul>
+        <li>
+          Location: <code>images/favicon/</code> directory, including:
+          <code>favicon.ico</code>, <code>favicon.svg</code>,
+          <code>favicon-96x96.png</code>, <code>apple-touch-icon.png</code>,
+          <code>web-app-manifest-192x192.png</code>,
+          <code>web-app-manifest-512x512.png</code>, <code>site.webmanifest</code>.
+        </li>
+      </ul>
+
+      <p>
+        Image sources and file structure are documented via code comments, with
+        descriptive file names and a clear directory structure for maintainability.
+      </p>
+    </section>
+
+    <!-- Next Steps & Future Enhancements -->
+    <section class="section-card" id="future">
+      <h2>Next Steps & Future Enhancements</h2>
+
+      <details open>
+        <summary>
+          <span class="summary-label">
+            Immediate Improvements <span>Short-Term</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <ul>
+            <li><strong>Enhanced Responsive Design:</strong> add full mobile and tablet breakpoints beyond 1280px.</li>
+            <li><strong>Additional Game Modes:</strong> expand "How to Play" with more detailed mode breakdowns.</li>
+            <li><strong>Card Ability Details:</strong> add expandable sections per card with ability breakdowns.</li>
+            <li><strong>Search Functionality:</strong> implement search to quickly find cards or rules.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            Advanced Features <span>Deeper Interactivity</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <ul>
+            <li><strong>Interactive Game Simulator:</strong> a playable demo to simulate a round.</li>
+            <li><strong>Strategy Calculator:</strong> a tool to help players evaluate probabilities and optimal moves.</li>
+            <li><strong>Community Features:</strong> user-submitted strategies and tips.</li>
+            <li><strong>Video Tutorials:</strong> embedded gameplay and strategy walkthroughs.</li>
+            <li><strong>Print-Friendly Reference:</strong> downloadable PDF of card abilities.</li>
+            <li><strong>Dark Mode Toggle:</strong> dedicated dark/light mode in addition to theme switching.</li>
+            <li><strong>Card Comparison Tool:</strong> side-by-side comparison for multiple cards.</li>
+            <li><strong>Game Statistics Tracker:</strong> track wins, roles, and meta trends over time.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            Technical Enhancements <span>Under the Hood</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <ul>
+            <li>Further performance optimization and advanced lazy loading for assets.</li>
+            <li>Progressive Web App (PWA) conversion for offline-friendly play reference.</li>
+            <li>Full accessibility audit and refinements based on findings.</li>
+            <li>SEO improvements with richer meta tags and structured data.</li>
+            <li>Analytics integration to understand user behavior and popular content.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            Content Expansion <span>Game Knowledge</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <ul>
+            <li>Advanced strategy guides for each game mode.</li>
+            <li>Card synergy analysis documenting powerful combinations.</li>
+            <li>"Common Mistakes" section to help players avoid pitfalls.</li>
+            <li>Official tournament rules and recommended formats.</li>
+            <li>FAQ section capturing frequent questions from players.</li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            What I Would Have Liked to Do If I Had More Time <span>Future Vision</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <h3>Original Character Art Development</h3>
+          <p>
+            One of the most significant improvements I would have made given more time is the complete
+            redesign and development of all 18 character card illustrations. Currently, the card images
+            featured on this site are draft mockups created using generative imagery with slight Photoshop
+            refinements. While these serve as functional placeholders, they don't fully represent the
+            original vision I have for each character.
+          </p>
+          <ul>
+            <li>
+              <strong>Fully Original Character Designs:</strong> I plan to commission or create completely
+              original illustrations for each of the 18 characters, moving away from generative imagery
+              to develop unique, cohesive character designs that better reflect the game's aesthetic and
+              narrative.
+            </li>
+            <li>
+              <strong>Consistent Art Style:</strong> All characters would share a unified visual language,
+              ensuring that the art direction feels cohesive across all cards and aligns with the game's
+              casino-themed, social deduction atmosphere.
+            </li>
+            <li>
+              <strong>Character Personality:</strong> Each illustration would be designed to convey the
+              unique personality and role of the character, making them more memorable and thematically
+              appropriate for their in-game abilities.
+            </li>
+            <li>
+              <strong>Professional Polish:</strong> The final character art would undergo a more thorough
+              design process, including concept sketches, color studies, and multiple iterations to ensure
+              each card feels like a premium, finished product.
+            </li>
+          </ul>
+          <p>
+            As the game development continues, these draft mockups will be systematically replaced with
+            fully developed, original character illustrations that better represent the final vision for
+            <em>Turncloak Card Conspiracy</em>.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Challenges & Learning -->
+    <section class="section-card" id="challenges">
+      <h2>Challenges, Struggles & Learning</h2>
+
+      <details open>
+        <summary>
+          <span class="summary-label">
+            Technical Challenges <span>Engineering</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <ul>
+            <li>
+              <strong>Carousel Implementation:</strong> initially struggled to fit Slick Carousel into
+              the existing card structure. The solution was to create dedicated carousel sections
+              separate from the grid layout.
+            </li>
+            <li>
+              <strong>Theme System:</strong> designing a comprehensive theme system with CSS custom
+              properties required careful planning so every visual element updated correctly. I
+              solved this by defining all color variables upfront and testing each theme thoroughly.
+            </li>
+            <li>
+              <strong>Web Storage Persistence:</strong> ensuring preferences correctly persisted
+              across reloads demanded careful use of <code>localStorage</code>, including JSON
+              serialization and robust error handling.
+            </li>
+            <li>
+              <strong>API Integration:</strong> configuring the Postman Mock Server and gracefully
+              handling API errors led to stronger user-facing error states and fallback messaging.
+            </li>
+            <li>
+              <strong>Removing Inline Styles:</strong> refactoring early inline styles into reusable
+              utility classes improved maintainability and separation of concerns.
+            </li>
+            <li>
+              <strong>Sound Effects Integration:</strong> working around browser autoplay policies
+              with Tone.js meant initializing the audio context on user interaction.
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            Design Challenges <span>UX & Content</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <ul>
+            <li>
+              <strong>Information Architecture:</strong> organizing a large volume of rules,
+              card details, and strategy content in a single page without overwhelming users.
+              Accordions, carousels, and strong headings helped maintain clarity.
+            </li>
+            <li>
+              <strong>Card Display:</strong> balancing the need to show all cards with visual appeal
+              led to offering both grid and carousel views to support different browsing styles.
+            </li>
+            <li>
+              <strong>Theme Consistency:</strong> ensuring all four themes felt cohesive, legible,
+              and on-brand required systematic palette design and repeated testing.
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary>
+          <span class="summary-label">
+            Learning Experiences <span>Growth</span>
+          </span>
+          <span class="caret">▶</span>
+        </summary>
+        <div>
+          <ul>
+            <li>Deepened understanding of jQuery plugins and widget integration.</li>
+            <li>Learned how to configure and consume Postman Mock Servers for API testing.</li>
+            <li>Gained practical experience building theme systems with CSS custom properties.</li>
+            <li>Improved familiarity with web storage APIs and persistence patterns.</li>
+            <li>Strengthened accessibility practices using ARIA labels and semantic HTML.</li>
+          </ul>
+        </div>
+      </details>
+    </section>
+
+    <!-- What I Enjoyed Most -->
+    <section class="section-card" id="enjoyment">
+      <h2>What I Enjoyed Most</h2>
+
+      <h3>Creative Aspects</h3>
+      <ul>
+        <li>
+          <strong>Theme Design:</strong> crafting four cohesive themes, each telling its own story
+          within the Turncloak universe, was creatively satisfying.
+        </li>
+        <li>
+          <strong>Interactive Elements:</strong> building card flips, sound effects, and dynamic tips
+          made the site feel alive and playful.
+        </li>
+        <li>
+          <strong>Problem Solving:</strong> working through carousel, theme, and API challenges was
+          a rewarding mix of design and engineering.
+        </li>
+      </ul>
+
+      <h3>Technical Achievements</h3>
+      <ul>
+        <li>Clean, modular code structure that’s easy to maintain and extend.</li>
+        <li>Accessibility considered from the beginning instead of as an afterthought.</li>
+        <li>Successful API integration to make content dynamic and replayable.</li>
+      </ul>
+
+      <h3>User Experience</h3>
+      <ul>
+        <li><strong>Personalization:</strong> usernames and themes help players feel recognized and welcomed back.</li>
+        <li><strong>Visual Feedback:</strong> interactive states reinforce that the interface is responsive and trustworthy.</li>
+        <li><strong>Comprehensive Information:</strong> players can use the site as a true learning and reference tool.</li>
+      </ul>
+
+      <h3>Overall Satisfaction</h3>
+      <p>
+        This project allowed me to combine technical skills with creative storytelling to build a
+        site that’s both functional and fun. The course requirements pushed me into new territory:
+        web audio, theme systems, API-driven content, and more. The end result is a professional,
+        interactive website that doubles as a playable companion to the physical game and a strong
+        portfolio piece for front-end development and game-adjacent UI/UX.
+      </p>
+    </section>
+
+    <!-- Conclusion -->
+    <section class="section-card" id="conclusion">
+      <h2>Conclusion</h2>
+      <p>
+        The Turncloak Card Conspiracy tutorial website successfully meets all project requirements
+        while delivering an engaging, educational experience for players. From semantic HTML and
+        validated CSS to jQuery-powered interactivity, API consumption, and web storage, the site
+        demonstrates a full front-end stack applied to a real game.
+      </p>
+      <p>
+        As both a functional tool for players and a detailed case study, the project highlights
+        my ability to plan, design, build, and polish a single-page web application that feels
+        cohesive, interactive, and player-centered.
+      </p>
+    </section>
+
+    <!-- Project Links -->
+    <section class="section-card" id="links">
+      <h2>Project Links</h2>
+      <p>Explore the live experience, source code, and API used in this project:</p>
+      <div class="links-row">
+        <a class="link-pill" href="https://turncloak.cc" target="_blank" rel="noopener noreferrer">
+          <span>🎮</span><span>Live Game Site - turncloak.cc</span>
+        </a>
+        <a class="link-pill" href="https://github.com/tbalzora/turncloakcc-tutorial" target="_blank" rel="noopener noreferrer">
+          <span>📁</span><span>GitHub Repository</span>
+        </a>
+        <a class="link-pill" href="https://586702b5-847c-462d-b05b-c2423ff15248.mock.pstmn.io/strategy-tips" target="_blank" rel="noopener noreferrer">
+          <span>🧠</span><span>Strategy Tips Mock API</span>
+        </a>
+      </div>
+
+      <p class="footer-note">
+        This project was completed as part of a web development course, demonstrating mastery of
+        front-end fundamentals including semantic HTML, CSS styling, JavaScript, jQuery integration,
+        API consumption, and web storage.
+      </p>
+    </section>
+  </main>
+
+  <!-- Lightbox for gallery images -->
+  <div class="lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <div class="lightbox-inner">
+      <img src="" alt="">
+      <div class="lightbox-caption">
+        <span class="lightbox-text"></span>
+        <button type="button" class="lightbox-close" aria-label="Close image preview">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    "use strict";
+
+    // Simple lightbox for gallery images
+    (function () {
+      var lightbox = document.querySelector(".lightbox");
+      if (!lightbox) return;
+
+      var lightboxImg = lightbox.querySelector("img");
+      var lightboxText = lightbox.querySelector(".lightbox-text");
+      var closeBtn = lightbox.querySelector(".lightbox-close");
+
+      function openLightbox(src, alt, caption) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt || "";
+        lightboxText.textContent = caption || "";
+        lightbox.style.display = "flex";
+        lightbox.setAttribute("aria-hidden", "false");
+      }
+
+      function closeLightbox() {
+        lightbox.style.display = "none";
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImg.src = "";
+        lightboxImg.alt = "";
+        lightboxText.textContent = "";
+      }
+
+      document.addEventListener("click", function (event) {
+        var fig = event.target.closest("figure");
+        if (fig && fig.closest(".gallery")) {
+          var img = fig.querySelector("img");
+          var fullSrc = fig.getAttribute("data-full") || (img ? img.src : "");
+          var alt = img ? img.alt : "";
+          var caption = fig.querySelector("figcaption") ? fig.querySelector("figcaption").textContent : "";
+          if (fullSrc) {
+            openLightbox(fullSrc, alt, caption);
+          }
+        }
+
+        if (event.target === lightbox || event.target === closeBtn) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && lightbox.getAttribute("aria-hidden") === "false") {
+          closeLightbox();
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
